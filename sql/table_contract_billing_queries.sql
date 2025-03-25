@@ -62,4 +62,4 @@ SELECT c.*, COALESCE(SUM(b.amount),0) AS total_payments
                 FROM contract c
                 LEFT JOIN billing b ON c.id = b.contract_id
                 GROUP BY c.id
-                HAVING total_payments < c.price
+                HAVING total_payments < c.price;

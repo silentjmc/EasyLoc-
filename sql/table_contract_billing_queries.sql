@@ -1,7 +1,9 @@
 -- List all contracts associated with a customer UID
+-- The placeholder :customer_uid should be replaced with the actual customer UID value when executing the query
 SELECT * FROM contract WHERE customer_uid = :customer_uid;
 
 -- List all contracts where a certain vehicle was used
+-- The placeholder :vehicle_uid should be replaced with the actual vehicle UID value when executing the query
 SELECT * FROM contract WHERE vehicle_uid = :vehicle_uid;
 
 -- Retrieve all contracts grouped by vehicles
@@ -15,6 +17,7 @@ FROM contract
 GROUP BY customer_uid;
 
 -- List all ongoing rentals associated with a customer UID
+-- The placeholder :customer_uid should be replaced with the actual customer UID value when executing the query
 SELECT * FROM contract 
 WHERE customer_uid = :customer_uid 
 AND loc_begin_datetime <= NOW() 
@@ -27,6 +30,7 @@ WHERE (returning_datetime IS NULL AND loc_end_datetime < NOW() - INTERVAL 1 HOUR
 OR (returning_datetime IS NOT NULL AND returning_datetime > loc_end_datetime + INTERVAL 1 HOUR);
 
 -- Count the number of overdue rentals between two given dates
+-- The placeholders :start and :end should be replaced with the actual start and end date values when executing the query
 SELECT COUNT(*) FROM contract 
 WHERE (returning_datetime IS NULL AND loc_end_datetime < NOW() - INTERVAL 1 HOUR) 
 OR (returning_datetime IS NOT NULL AND returning_datetime > loc_end_datetime + INTERVAL 1 HOUR) 
@@ -42,9 +46,11 @@ FROM contract WHERE returning_datetime IS NOT NULL AND returning_datetime > loc_
 GROUP BY vehicle_uid;
 
 -- List all payments associated with a rental
+-- The placeholder :contract_id should be replaced with the actual contract ID value when executing the query
 SELECT * FROM billing WHERE contract_id = :contract_id;
 
 -- Check if a rental has been fully paid
+-- The placeholder :contract_id should be replaced with the actual contract ID value when executing the query
 SELECT c.price, COALESCE(SUM(b.amount),0) AS total_payments 
                 FROM contract c
                 LEFT JOIN billing b ON c.id = b.contract_id

@@ -37,8 +37,16 @@ OR (returning_datetime IS NOT NULL AND returning_datetime > loc_end_datetime + I
 AND loc_end_datetime BETWEEN :start AND :end;
 
 -- Count the average number of overdue rentals per customer
-SELECT AVG(overdue_count) AS average_overdue_count 
-FROM (SELECT customer_uid, count(*) AS overdue_count FROM contract WHERE (returning_datetime IS NULL AND loc_end_datetime < NOW() - INTERVAL 1 HOUR) OR (returning_datetime IS NOT NULL AND returning_datetime > loc_end_datetime + INTERVAL 1 HOUR) group by customer_uid) AS overdue_data;
+SELECT customer_uid, (SUM(
+                        CASE 
+                            WHEN (returning_datetime IS NULL AND loc_end_datetime < NOW() - INTERVAL 1 HOUR) 
+                            OR (returning_datetime IS NOT NULL AND returning_datetime > loc_end_datetime + INTERVAL 1 HOUR) 
+                            THEN 1 
+                            ELSE 0 
+                        END
+                        ) / COUNT(*)) AS overdue_ratio
+FROM contract
+GROUP BY customer_uid;
 
 -- Get the average delay time per vehicle
 SELECT vehicle_uid, AVG(TIMESTAMPDIFF(MINUTE, loc_end_datetime, returning_datetime)) AS average_time_overdue 

@@ -56,7 +56,7 @@ class VehicleCrud {
     }
 
     public function countVehiclesWithKmGreater(int $kilometrage): int {
-        $filter = ['km' => ['$gt' => $kilometrage]];
+        $filter = ['km' => ['$gte' => $kilometrage]];
 
         // Utilise la méthode countDocuments pour compter le nombre de véhicules correspondant au filtre
         $count = $this->collection->countDocuments($filter);
@@ -65,7 +65,7 @@ class VehicleCrud {
     }
 
     public function countVehiclesWithKmLesser(int $kilometrage): int {
-        $filter = ['km' => ['$lt' => $kilometrage]];
+        $filter = ['km' => ['$lte' => $kilometrage]];
 
         // Utilise la méthode countDocuments pour compter le nombre de véhicules correspondant au filtre
         $count = $this->collection->countDocuments($filter);

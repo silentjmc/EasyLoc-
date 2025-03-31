@@ -124,7 +124,7 @@ $contracts = $contractCrud->getAllContracts();
                 <label>Sign DateTime: <input type="datetime-local" name="contract_sign_datetime" required></label><br>
                 <label>Begin DateTime: <input type="datetime-local" name="contract_loc_begin_datetime" required></label><br>
                 <label>End DateTime: <input type="datetime-local" name="contract_loc_end_datetime" required></label><br>
-                <label>Returning DateTime: <input type="datetime-local" name="contract_returning_datetime" required></label><br>
+                <label>Returning DateTime: <input type="datetime-local" name="contract_returning_datetime"></label><br>
                 <label>Price: <input type="number" step="0.01" name="contract_price" required></label><br>
                 <button type="submit">Create Contract</button>
             </form>
@@ -137,7 +137,7 @@ $contracts = $contractCrud->getAllContracts();
                 <label>Sign DateTime: <input type="datetime-local" name="contract_sign_datetime" required></label><br>
                 <label>Begin DateTime: <input type="datetime-local" name="contract_loc_begin_datetime" required></label><br>
                 <label>End DateTime: <input type="datetime-local" name="contract_loc_end_datetime" required></label><br>
-                <label>Returning DateTime: <input type="datetime-local" name="contract_returning_datetime" required></label><br>
+                <label>Returning DateTime: <input type="datetime-local" name="contract_returning_datetime"></label><br>
                 <label>Price: <input type="number" step="0.01" name="contract_price" required></label><br>
                 <button type="submit">Update Contract</button>
             </form>

@@ -77,7 +77,7 @@ class ContractCrud {
         $stmt->bindParam(':sign_datetime', $sign_datetime);
         $stmt->bindParam(':loc_begin_datetime', $loc_begin_datetime);
         $stmt->bindParam(':loc_end_datetime', $loc_end_datetime);
-        $stmt->bindParam(':returning_datetime', $returning_datetime, PDO::PARAM_NULL);
+        $stmt->bindParam(':returning_datetime', $returning_datetime, $returning_datetime === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
         $stmt->bindParam(':price', $price);
 
         $result = $stmt->execute();
@@ -99,12 +99,17 @@ class ContractCrud {
     public function updateContract(Contract $contract): bool {
         $sql = "UPDATE contract SET vehicle_uid = :vehicle_uid , customer_uid = :customer_uid, sign_datetime = :sign_datetime, loc_begin_datetime = :loc_begin_datetime, loc_end_datetime = :loc_end_datetime, returning_datetime = :returning_datetime, price = :price WHERE id = :id";
     $stmt = $this->pdo->prepare($sql);
+    $sign_datetime = $contract->getSignDatetime()->format('Y-m-d H:i:s');
+    $loc_begin_datetime = $contract->getLocBeginDatetime()->format('Y-m-d H:i:s');
+    $loc_end_datetime = $contract->getLocEndDatetime()->format('Y-m-d H:i:s');
+    $returning_datetime = $contract->getReturningDatetime() ? $contract->getReturningDatetime()->format('Y-m-d H:i:s') : null;
+
     $stmt->bindValue(':vehicle_uid', $contract->getVehicleUid());
     $stmt->bindValue(':customer_uid', $contract->getCustomerUid());
-    $stmt->bindValue(':sign_datetime', $contract->getSignDatetime()->format('Y-m-d H:i:s'));
-    $stmt->bindValue(':loc_begin_datetime', $contract->getLocBeginDatetime()->format('Y-m-d H:i:s'));
-    $stmt->bindValue(':loc_end_datetime', $contract->getLocEndDatetime()->format('Y-m-d H:i:s'));
-    $stmt->bindValue(':returning_datetime', $contract->getReturningDatetime()->format('Y-m-d H:i:s'), PDO::PARAM_NULL);
+    $stmt->bindValue(':sign_datetime', $sign_datetime);
+    $stmt->bindValue(':loc_begin_datetime', $loc_begin_datetime);
+    $stmt->bindValue(':loc_end_datetime', $loc_end_datetime);
+    $stmt->bindValue(':returning_datetime', $returning_datetime, $returning_datetime === null ? PDO::PARAM_NULL : PDO::PARAM_STR);
     $stmt->bindValue(':price', $contract->getPrice());
     $stmt->bindValue(':id', $contract->getId());
     $stmt->execute();

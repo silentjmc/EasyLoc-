@@ -1,18 +1,10 @@
 <?php
 //require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/src/database/mongodb_connection.php';
 require_once __DIR__ . '/src/database/mysql_connection.php';
-require_once __DIR__ . '/src/customer/customer_crud.php';
-require_once __DIR__ . '/src/vehicle/vehicle_crud.php';
-require_once __DIR__ . '/src/contract/contract_crud.php';
 require_once __DIR__ . '/src/billing/billing_crud.php';
 
-$mongodbConnection = new MongodbConnection();
 $mysqlConnection = new MysqlConnection();
 
-$customerCrud = new CustomerCrud($mongodbConnection);
-$vehicleCrud = new VehicleCrud($mongodbConnection);
-$contractCrud = new ContractCrud($mysqlConnection->getPdo());
 $billingCrud = new BillingCrud($mysqlConnection->getPdo());
 
 $message = '';

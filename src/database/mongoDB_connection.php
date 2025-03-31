@@ -6,11 +6,11 @@ use MongoDB\Client;
 use MongoDB\Database;
 
 class MongodbConnection {
-    private Client $client;
-    private Database $database;
+    private ?Client $client = null;  // Permet d'éviter l'erreur d'accès prématuré
+    private ?Database $database = null;
     public function __construct() {
         global $mongodb_config;
-        $uri = "mongodb+srv://{$mongodb_config['user']}:{$mongodb_config['password']}@{$mongodb_config['instance']}?retryWrites=true&w=majority&appName=EasyLoc";
+        $uri = "mongodb+srv://{$mongodb_config['user']}:{$mongodb_config['password']}@{$mongodb_config['instance']}/?retryWrites=true&w=majority&serverSelectionTimeoutMS=5000&appName=EasyLoc";
 
         try {
             $this->client = new Client($uri);
@@ -24,6 +24,11 @@ class MongodbConnection {
     }
 
     public function getDatabase(): Database {
+        if ($this->database === null) {
+            throw new Exception("La connexion à MongoDB n'a pas été correctement établie.");
+        }
         return $this->database;
     }
 }
+
+

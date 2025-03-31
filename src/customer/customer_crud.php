@@ -121,6 +121,12 @@ class CustomerCrud {
         return new Customer($documentArray);
     }
 
+    /**
+     * Retrieves all customers from the MongoDB collection.
+     * 
+     * @return array An array of Customer objects.
+     */
+
     public function getAllCustomers(): array {
         $customers = $this->collection->find();
         $result = [];

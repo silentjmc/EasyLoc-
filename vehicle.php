@@ -1,19 +1,14 @@
 <?php
-//require_once __DIR__ . '/vendor/autoload.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/database/mongodb_connection.php';
-require_once __DIR__ . '/src/database/mysql_connection.php';
-require_once __DIR__ . '/src/customer/customer_crud.php';
 require_once __DIR__ . '/src/vehicle/vehicle_crud.php';
-require_once __DIR__ . '/src/contract/contract_crud.php';
-require_once __DIR__ . '/src/billing/billing_crud.php';
 
 $mongodbConnection = new MongodbConnection();
-$mysqlConnection = new MysqlConnection();
 
-$customerCrud = new CustomerCrud($mongodbConnection);
 $vehicleCrud = new VehicleCrud($mongodbConnection);
-$contractCrud = new ContractCrud($mysqlConnection->getPdo());
-$billingCrud = new BillingCrud($mysqlConnection->getPdo());
 
 $message = '';
 
@@ -148,13 +143,13 @@ $vehicles = $vehicleCrud->getAllVehicles();
             </form>
         </div>
         <div class="column2">
-            <?php if (isset($getVehicleByLicencePlate)): ?>
+            <?php if (isset($vehicleByLicencePlate)): ?>
             <h2>vehicle Table</h2>
             <h3>Result:</h3>
-            <p>UID: <?php echo $getVehicleByLicencePlate->getUid(); ?></p>
-            <p>Licence plate Name: <?php echo $getVehicleByLicencePlate->getLicencePlate(); ?></p>
-            <p>Informations: <?php echo $getVehicleByLicencePlate->getInformations(); ?></p>
-            <p>Km: <?php echo $getVehicleByLicencePlate->getKm(); ?></p>
+            <p>UID: <?php echo $vehicleByLicencePlate->getUid(); ?></p>
+            <p>Licence plate Name: <?php echo $vehicleByLicencePlate->getLicencePlate(); ?></p>
+            <p>Informations: <?php echo $vehicleByLicencePlate->getInformations(); ?></p>
+            <p>Km: <?php echo $vehicleByLicencePlate->getKm(); ?></p>
             <?php endif; ?>
         </div>
     </div>

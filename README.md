@@ -97,6 +97,7 @@ Le dépôt contient
 - un jeu de données pour sql et des examples de requêtes dans le dossier sample
 - des pages de tests pour tester les différentes requêtes avec vos bases de données
 
+```
 EasyLoc/
 ├── css (style pour les pages de test)
 ├── nosql (Bibliothèque de gestion des données)
@@ -108,6 +109,7 @@ EasyLoc/
 ├── billing.php (page de test)
 ├── customer.php (page de test)
 ├── vehicle.php (page de test)
+```
 
 ## Étapes d'installation des pages de tests
 Prérequis

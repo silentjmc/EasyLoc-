@@ -56,7 +56,7 @@ Table Vehicle : Contient les données associées à un véhicule
 - km (INT - Kilométrage du véhicule)
 
 ### 2. Cahier des charges
-#### Partie 1 : base de donnée SQL Srv
+#### Partie 1 : base de donnée SQL
 Étant donné un couple utilisateur/mot de passe, établir une connexion sécurisée au SGBD.
 
 **Table Contract**
@@ -102,7 +102,7 @@ EasyLoc/
 ├── nosql (Bibliothèque de gestion des données)
 ├── sample (données a injecter dans les tables sql et exemples de rêquetes fonctionnelles pour chaque demande)
 ├── sql (Bibliothèque de gestion des données)
-├── src (classes pour tester les différentes requêtes en php )
+├── src (classes pour tester les différentes requêtes en php)
 ├── vendor/ (a généré par Composer)
 ├── index.php (page de test)
 ├── billing.php (page de test)
@@ -121,17 +121,17 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants :
 ### 1. Cloner le projet
 Clonez le projet dans le répertoire de votre serveur web
 
----------------------------------------------------------
-| git clone https://github.com/silentjmc/EasyLoc-.git   |
-| cd easyloc                                            |
----------------------------------------------------------
+```
+git clone https://github.com/silentjmc/EasyLoc-.git 
+cd easyloc                                           
+```
 
 ### 2. Installer les dépendances avec Composer
 Assurez-vous que Composer est installé sur votre machine, puis exécutez la commande suivante dans le répertoire du projet :
 
----------------------------------------------------------
-| composer install                                      |
----------------------------------------------------------
+```
+composer install
+```
 
 Cela installera l'extension mongoDB.
 
@@ -145,14 +145,14 @@ Configurer les informations de connexion :
 Ouvrez le fichier src/database/config.php.
 Mettez à jour les informations de connexion MongoDB :
 
--------------------------------------------------------------------------------------
-| $mongodb_config = [                                                               | 
-|     'instance' => 'localhost', // Remplacez par votre instance MongoDB            | 
-|     'user' => '', // Remplacez par le nom d'utilisateur MongoDB (si nécessaire)   | 
-|     'password' => '', // Remplacez par le mot de passe MongoDB (si nécessaire)    | 
-|     'database' => 'easyloc', // Nom de la base de données                         | 
-| ];                                                                                | 
--------------------------------------------------------------------------------------
+```php
+$mongodb_config = [
+    'instance' => 'localhost', // Remplacez par votre instance MongoDB
+    'user' => '', // Remplacez par le nom d'utilisateur MongoDB (si nécessaire)
+    'password' => '', // Remplacez par le mot de passe MongoDB (si nécessaire)
+    'database' => 'easyloc', // Nom de la base de données
+];
+```
 
 ### 4. Configurer la base de données MySQL
 Créez une base de données appelée easyloc (ou utilisez un autre nom et mettez-le à jour dans config.php).
@@ -161,15 +161,15 @@ Configurer les informations de connexion :
 Ouvrez le fichier src/database/config.php.
 Mettez à jour les informations de connexion MySQL :
 
------------------------------------------------------------------------------------------
-| $mysql_config = [                                                                     |
-|    'host' => 'localhost', // Remplacez par votre base de données MySQL                |
-|    'port' => 3306, // Remplacez par le numero du port                                 |
-|    'user'=>'root', // Remplacez par le nom d'utilisateur de la base de données MySQL  |
-|    'password' => '', // Remplacez par le mot de passe de la base de données MySQL     |
-|    'database' => 'easyloc', // Nom de la base de données                              |
-| ];                                                                                    | 
-|----------------------------------------------------------------------------------------
+```php
+$mysql_config = [
+   'host' => 'localhost', // Remplacez par votre base de données MySQL
+   'port' => 3306, // Remplacez par le numero du port
+   'user'=>'root', // Remplacez par le nom d'utilisateur de la base de données MySQL
+   'password' => '', // Remplacez par le mot de passe de la base de données MySQL
+   'database' => 'easyloc', // Nom de la base de données
+];
+```
 
 ### 5. Configurer le serveur web
 Placez le projet dans le répertoire racine de votre serveur web (par exemple, EasyLoc).

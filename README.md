@@ -112,7 +112,7 @@ EasyLoc/
 ```
 
 ## Étapes d'installation des pages de tests
-Prérequis
+### Prérequis
 Avant de commencer, assurez-vous d'avoir les éléments suivants :
 
 - PHP (version 8.2 ou supérieure)

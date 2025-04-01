@@ -24,7 +24,9 @@ véhicules.
 
 #### 1.3. Architecture des bases de données
 **Tables de la base de données SQL**
+
 Table Contract : contient les données des contrats de locations.
+
 Champs :
 - id (INT - clé unique du contrat)
 - vehicle_uid (CHAR(255) - uid du Vehicle associé au contrat)
@@ -36,12 +38,14 @@ Champs :
 - price (MONEY - Prix facturé pour le contrat)
 
 Table Billing : Contient les données de payement des contrats. Payement en plusieur fois possible.
+
 Champs :
 - ID ( INT - clé unique du payement)
 - Contract_id (INT - clé unique du contrat concerné par le payement)
 - Amount (MONEY - Montant payé)
 
 **Schémas de documents dans la base MongoDB**
+
 Table Customer : Contient les données clients
 - uid (UUID - Identifiant unique du document)
 - first_name (CHAR(255) - Nom)
@@ -144,8 +148,8 @@ Connectez-vous à votre instance MongoDB (via MongoDB Compass ou la ligne de com
 Créez une base de données appelée easyloc (ou utilisez un autre nom et mettez-le à jour dans config.php).
 
 Configurer les informations de connexion :
-Ouvrez le fichier src/database/config.php.
-Mettez à jour les informations de connexion MongoDB :
+- Ouvrez le fichier src/database/config.php.
+- Mettez à jour les informations de connexion MongoDB :
 
 ```php
 $mongodb_config = [
@@ -160,8 +164,8 @@ $mongodb_config = [
 Créez une base de données appelée easyloc (ou utilisez un autre nom et mettez-le à jour dans config.php).
 
 Configurer les informations de connexion :
-Ouvrez le fichier src/database/config.php.
-Mettez à jour les informations de connexion MySQL :
+- Ouvrez le fichier src/database/config.php.
+- Mettez à jour les informations de connexion MySQL :
 
 ```php
 $mysql_config = [

@@ -1,0 +1,72 @@
+[
+    {
+        "uid": "CU001",
+        "first_name": "Alice",
+        "second_name": "Durand",
+        "address": "12 Rue de la Paix, 75001 Paris",
+        "permit_number": "C987654"
+    },
+    {
+        "uid": "CU002",
+        "first_name": "Paul",
+        "second_name": "Lemoine",
+        "address": "25 Avenue Victor Hugo, 75016 Paris",
+        "permit_number": "C123456"
+    },
+    {
+        "uid": "CU003",
+        "first_name": "Sophie",
+        "second_name": "Martin",
+        "address": "8 Place Bellecour, 69002 Lyon",
+        "permit_number": "C654321"
+    },
+    {
+        "uid": "CU004",
+        "first_name": "Thomas",
+        "second_name": "Bernard",
+        "address": "14 Rue Sainte-Catherine, 33000 Bordeaux",
+        "permit_number": "C789012"
+    },
+    {
+        "uid": "CU005",
+        "first_name": "Camille",
+        "second_name": "Morel",
+        "address": "32 Boulevard Haussmann, 75009 Paris",
+        "permit_number": "C345678"
+    },
+    {
+        "uid": "CU006",
+        "first_name": "Julien",
+        "second_name": "Robert",
+        "address": "5 Rue des Carmes, 31000 Toulouse",
+        "permit_number": "C567890"
+    },
+    {
+        "uid": "CU007",
+        "first_name": "Manon",
+        "second_name": "Lefebvre",
+        "address": "17 Quai des Chartrons, 33000 Bordeaux",
+        "permit_number": "C098765"
+    },
+    {
+        "uid": "CU008",
+        "first_name": "Hugo",
+        "second_name": "Dubois",
+        "address": "28 Rue de la République, 13001 Marseille",
+        "permit_number": "C432109"
+    },
+    {
+        "uid": "CU009",
+        "first_name": "Emma",
+        "second_name": "Garcia",
+        "address": "41 Rue Saint-Ferréol, 13006 Marseille",
+        "permit_number": "C876543"
+    },
+    {
+        "uid": "CU010",
+        "first_name": "Lucas",
+        "second_name": "Girard",
+        "address": "6 Avenue Jean Médecin, 06000 Nice",
+        "permit_number": "C210987"
+    }
+]

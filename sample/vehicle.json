@@ -1,0 +1,62 @@
+[
+    {
+        "uid": "VH001",
+        "licence_plate": "AB-123-CD",
+        "informations": "Renault Clio - Rouge",
+        "km": 500
+    },
+    {
+        "uid": "VH002",
+        "licence_plate": "XY-456-ZT",
+        "informations": "Peugeot 208 - Bleu",
+        "km": 12000
+    },
+    {
+        "uid": "VH003",
+        "licence_plate": "WX-789-YU",
+        "informations": "Citroën C3 - Noir",
+        "km": 35000
+    },
+    {
+        "uid": "VH004",
+        "licence_plate": "CD-234-EF",
+        "informations": "Volkswagen Golf - Blanc",
+        "km": 22000
+    },
+    {
+        "uid": "VH005",
+        "licence_plate": "GH-567-IJ",
+        "informations": "Toyota Yaris - Gris",
+        "km": 18500
+    },
+    {
+        "uid": "VH006",
+        "licence_plate": "KL-890-MN",
+        "informations": "BMW Série 1 - Noir",
+        "km": 42000
+    },
+    {
+        "uid": "VH007",
+        "licence_plate": "OP-123-QR",
+        "informations": "Mercedes Classe A - Bleu Nuit",
+        "km": 31000
+    },
+    {
+        "uid": "VH008",
+        "licence_plate": "ST-456-UV",
+        "informations": "Audi A3 - Rouge Métallisé",
+        "km": 27000
+    },
+    {
+        "uid": "VH009",
+        "licence_plate": "WX-789-AB",
+        "informations": "Ford Fiesta - Jaune",
+        "km": 15000
+    },
+    {
+        "uid": "VH010",
+        "licence_plate": "CD-321-EF",
+        "informations": "Opel Corsa - Vert",
+        "km": 8000
+    }
+]
